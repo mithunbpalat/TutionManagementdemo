@@ -1,0 +1,103 @@
+<title>View Faculty Profile</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <div class="container-fluid">
+        <h1 style="text-align: center;font-size: 50px;color:black;">TUTION MANAGEMENT SYSTEM</h1><br>
+        <ul class="nav nav-pills nav-justified">
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/facultyprofile/{{faculty.fid}}">View Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/facultyviewstudents/{{faculty.fid}}">View Students</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " routerLink="/facultyviewclassschedule/{{faculty.fid}}">View Class Schedule</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " routerLink="/facultylogin">Logout</a>
+          </li>
+        </ul><br><br><br>
+        <h3 style="color:maroon;">Faculty {{faculty.facultyusername}} Logged in...</h3>
+        <div style="padding:3% 3%;margin: auto;background-color:lightgoldenrodyellow;">
+            <h1 style="text-align:center;">VIEW PROFILE</h1><br>
+          <div class="row">
+            <div class="col-sm">
+            <div style="margin: auto;border: 2px solid violet;border-radius: 5px;padding: 5px 26px;width:70%;">
+            <h1 class="text-center">Faculty Details</h1><br>
+            <div class="row">
+                <div class="col-sm"></div>
+                <div class="col-sm">
+                    <img src="assets/icon-g81b0c3767_1920.png" style="width:300px; height:300px;">
+                </div>
+                <div class="col-sm"></div>
+            </div><br>
+            <table class="table table-dark table-responsive-sm">
+              <tr>
+                <td>Id </td>
+                <td>{{faculty.fid}}</td>
+              </tr>    
+              <tr>
+                <td>Name</td>
+                <td>{{faculty.name}}</td>
+              </tr>
+              <tr>
+                <td>Address</td>
+                <td>{{faculty.address}}</td>
+              </tr>
+              <tr>
+                <td>Email</td>
+                <td>{{faculty.email}}</td>
+              </tr>
+              <tr>
+                <td>Course</td>
+                <td>{{faculty.course}}</td>
+              </tr>
+              <tr>
+                <td>Phonenumber</td>
+                <td>{{faculty.phone}}</td>
+              </tr>
+              <tr>
+                <td>Salary</td>
+                <td>{{faculty.salary}}</td>
+              </tr>
+              <tr>
+                <td>Payment Status</td>
+                <td>{{faculty.paymentstatus}}</td>
+              </tr>
+              <tr>
+                <td>Lecture Details</td>
+                <td>{{faculty.lecturedetails}}</td>
+              </tr>
+              <tr>
+                <td>Username</td>
+                <td>{{faculty.facultyusername}}</td>
+              </tr>
+              <tr>
+                <td>Password</td>
+                <td>{{faculty.facultypassword}}</td>
+              </tr>
+              <tr>
+                <td>Contract Start Date</td>
+                <td>{{faculty.contractstartdate}}</td>
+              </tr>
+              <tr>
+                <td>Contract Renewal Date</td>
+                <td>{{faculty.contractrenewaldate}}</td>
+              </tr>
+          </table><br>
+            </div><br><br>
+            </div>
+
+            </div>
+
+
+        </div>
+    </div>

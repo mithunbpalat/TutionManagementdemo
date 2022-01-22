@@ -1,0 +1,102 @@
+<title>View Student</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <div class="container-fluid">
+        <h1 style="text-align: center;font-size: 50px;color:black;">TUTION MANAGEMENT SYSTEM</h1><br>
+        <ul class="nav nav-pills nav-justified">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/adminaddfaculty">Add Faculty</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/adminaddstudent">Add Student</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/adminaddcourse">Add Course</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/adminviewstudent">View Student</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/adminviewevent">View Event</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/addemployee">Add Employee</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/adminscheduleclass">Schedule Class</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " routerLink="/adminlogin">Logout</a>
+          </li>
+        </ul><br><br><br>
+        <h3 style="color:maroon;">Admin Logged in...</h3>
+        <div style="padding:3% 3%;margin: auto;background-color:lightgoldenrodyellow;">
+        <div class="container-fluid">
+          <h1 style="text-align: center;">VIEW STUDENTS</h1><br><br>
+                <table class="table table-dark table-responsive">
+                  <thead>
+                  <tr>
+                  <th>Course Name</th>
+                </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let course of courses">
+                      <td><button class="btn btn-info" (click)="getStudent(course.coursename)">{{course.coursename | uppercase}}</button></td>
+                  </tr>
+                </tbody>
+                </table><br><br>
+
+
+                    <table class="table table-dark table-responsive">
+                        <thead>
+                        <tr>
+                          <th>Sid</th>
+                          <th>Name</th>
+                          <th>Address</th>
+                          <th>Email</th>
+                          <th>Course</th>
+                          <th>Phone</th>
+                          <th>Total Fees</th>
+                          <th>Fees Paid</th>
+                          <th>Balance Fees</th>
+                          <th>Fines</th>
+                          <th>Reservation Charges</th>
+                          <th>Fees Payment Date</th>
+                          <th>Username</th>
+                          <th>Password</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let student of students">
+                          <td>{{student.sid}}</td>
+                          <td>{{student.name}}</td>
+                          <td>{{student.address}}</td>
+                          <td>{{student.email}}</td>
+                          <td>{{student.course}}</td>
+                          <td>{{student.phone}}</td>
+                          <td>{{student.totalfees}}</td>
+                          <td>{{student.paidfees}}</td>
+                          <td>{{student.balancefees}}</td>
+                          <td>{{student.fines}}</td>
+                          <td>{{student.reservationcategorycharges}}</td>
+                          <td>{{student.feespaymentdate}}</td>
+                          <td>{{student.studusername}}</td>
+                          <td>{{student.studpassword}}</td>
+                        </tr>
+                        </tbody>
+                    </table><br><br>
+                
+
+
+
+        </div>
+        </div>
+    </div>

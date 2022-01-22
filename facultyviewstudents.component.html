@@ -1,0 +1,126 @@
+<title>View Students</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <div class="container-fluid">
+        <h1 style="text-align: center;font-size: 50px;color:black;">TUTION MANAGEMENT SYSTEM</h1><br>
+        <ul class="nav nav-pills nav-justified">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/facultyprofile/{{faculty.fid}}">View Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/facultyviewstudents/{{faculty.fid}}">View Students</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " routerLink="/facultyviewclassschedule/{{faculty.fid}}">View Class Schedule</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " routerLink="/facultylogin">Logout</a>
+          </li>
+        </ul><br><br><br>
+        <h3 style="color:maroon;">Faculty {{faculty.facultyusername}} Logged in...</h3>
+        <div style="padding:3% 3%;margin: auto;background-color:lightgoldenrodyellow;">
+          <div class="row">
+            <div class="col-sm">
+            <h1 style="text-align:center;">VIEW STUDENTS</h1><br>
+
+                <h3 style="text-align: center;">Search Student By Sid</h3>
+                <br>
+                <div class="form-group">
+                    <label for="search">Search By Sid:</label><br>
+                    <input type="number" class="form-control" [(ngModel)]="search.a" placeholder="Search By Sid" id="search" name="search"><br>
+                    <button class="btn btn-info btn-xs" (click)="searchById(search.a)"><span class="glyphicon glyphicon-remove"></span> Search</button><br>
+                  </div><br>
+                  <table class="table table-dark table-responsive">
+                    <tr>
+                        <th>Sid</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Email</th>
+                        <th>Course</th>
+                        <th>Phone</th>
+                        <th>Total Fees</th>
+                        <th>Fees Paid</th>
+                        <th>Balance Fees</th>
+                        <th>Fines</th>
+                        <th>Reservation Charges</th>
+                        <th>Fees Payment Date</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                    </tr>
+                    <tr >
+                        <td>{{student.sid}}</td>
+                        <td>{{student.name}}</td>
+                        <td>{{student.address}}</td>
+                        <td>{{student.email}}</td>
+                        <td>{{student.course}}</td>
+                        <td>{{student.phone}}</td>
+                        <td>{{student.totalfees}}</td>
+                        <td>{{student.paidfees}}</td>
+                        <td>{{student.balancefees}}</td>
+                        <td>{{student.fines}}</td>
+                        <td>{{student.reservationcategorycharges}}</td>
+                        <td>{{student.feespaymentdate}}</td>
+                        <td>{{student.studusername}}</td>
+                        <td>{{student.studpassword}}</td>
+                    </tr>
+                </table>
+                <br>
+
+                <h3 style="text-align: center;">List of Students</h3>
+                <br>
+                <button class="btn btn-info" (click)="getStudent(faculty.course)">GET STUDENTS</button>
+                <table class="table table-dark table-responsive">
+                  <thead>
+                  <tr>
+                    <th>Sid</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Email</th>
+                    <th>Course</th>
+                    <th>Phone</th>
+                    <th>Total Fees</th>
+                    <th>Fees Paid</th>
+                    <th>Balance Fees</th>
+                    <th>Fines</th>
+                    <th>Reservation Charges</th>
+                    <th>Fees Payment Date</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let student of students">
+                    <td>{{student.sid}}</td>
+                    <td>{{student.name}}</td>
+                    <td>{{student.address}}</td>
+                    <td>{{student.email}}</td>
+                    <td>{{student.course}}</td>
+                    <td>{{student.phone}}</td>
+                    <td>{{student.totalfees}}</td>
+                    <td>{{student.paidfees}}</td>
+                    <td>{{student.balancefees}}</td>
+                    <td>{{student.fines}}</td>
+                    <td>{{student.reservationcategorycharges}}</td>
+                    <td>{{student.feespaymentdate}}</td>
+                    <td>{{student.studusername}}</td>
+                    <td>{{student.studpassword}}</td>
+                  </tr>
+                  </tbody>
+              </table><br><br>
+
+
+
+
+
+
+        </div>
+    
+    </div>    

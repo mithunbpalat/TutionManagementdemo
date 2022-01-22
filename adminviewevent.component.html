@@ -1,0 +1,134 @@
+<title>View Event</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <div class="container-fluid">
+        <h1 style="text-align: center;font-size: 50px;color:black;">TUTION MANAGEMENT SYSTEM</h1><br>
+        <ul class="nav nav-pills nav-justified">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/adminaddfaculty">Add Faculty</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/adminaddstudent">Add Student</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/adminaddcourse">Add Course</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/adminviewstudent">View Student</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/adminviewevent">View Event</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/addemployee">Add Employee</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/adminscheduleclass">Schedule Class</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " routerLink="/adminlogin">Logout</a>
+          </li>
+        </ul><br><br><br>
+        <h3 style="color:maroon;">Admin Logged in...</h3>
+        <div style="padding:3% 3%;margin: auto;background-color:lightgoldenrodyellow;">
+        <div class="container-fluid">
+          <h1 style="text-align: center;">VIEW EVENTS</h1><br><br>
+            <h2 style="text-align: center;">Faculty Contract Renewal Dates</h2><br>
+            <table class="table table-dark table-responsive-sm">
+                <thead>
+                <tr>
+                  <th>Fid</th>
+                  <th>Name</th>
+                  <th>Course</th>
+                  <th>Phone</th>
+                  <th>Salary</th>
+                  <th>Payment Status</th>
+                  <th>Contract Start Date</th>
+                  <th>Contract Renewal Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let faculty of facultys">
+                  <td>{{faculty.fid}}</td>
+                  <td>{{faculty.name}}</td>
+                  <td>{{faculty.course}}</td>
+                  <td>{{faculty.phone}}</td>
+                  <td>{{faculty.salary}}</td>
+                  <td>{{faculty.paymentstatus}}</td>
+                  <td>{{faculty.contractstartdate}}</td>
+                  <td>{{faculty.contractrenewaldate}}</td>
+                </tr>
+                </tbody>
+            </table><br><br>
+
+            <h2 style="text-align: center;">Student Fees Payment Dates</h2><br>
+            <table class="table table-dark table-responsive-sm">
+                <thead>
+                <tr>
+                  <th>Sid</th>
+                  <th>Name</th>
+                  <th>Course</th>
+                  <th>Phone</th>
+                  <th>Total Fees</th>
+                  <th>Fees Paid</th>
+                  <th>Balance Fees</th>
+                  <th>Fines</th>
+                  <th>Reservation Charges</th>
+                  <th>Fees Payment Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let student of students">
+                  <td>{{student.sid}}</td>
+                  <td>{{student.name}}</td>
+                  <td>{{student.course}}</td>
+                  <td>{{student.phone}}</td>
+                  <td>{{student.totalfees}}</td>
+                  <td>{{student.paidfees}}</td>
+                  <td>{{student.balancefees}}</td>
+                  <td>{{student.fines}}</td>
+                  <td>{{student.reservationcategorycharges}}</td>
+                  <td>{{student.feespaymentdate}}</td>
+                </tr>
+                </tbody>
+            </table><br><br>
+        
+
+            <h2 style="text-align: center;">Employee Salary Payment Dates</h2><br>
+            <table class="table table-dark table-responsive-sm">
+              <thead>
+              <tr>
+                <th>Eid</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Designation</th>
+                <th>Phone</th>
+                <th>Monthly Salary</th>
+                <th>Payment Status</th>
+                <th>Date Of Payment</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let employee of employees">
+                    <td>{{employee.eid}}</td>
+                    <td>{{employee.empname}}</td>
+                    <td>{{employee.address}}</td>
+                    <td>{{employee.empdesignation}}</td>
+                    <td>{{employee.phone}}</td>
+                    <td>{{employee.salary}}</td>
+                    <td>{{employee.paymentstatus}}</td>
+                    <td>{{employee.date}}</td>
+              </tr>
+              </tbody>
+          </table><br><br>
+        </div>
+        </div>  
+    </div>
