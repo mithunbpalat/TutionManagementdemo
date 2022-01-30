@@ -1,0 +1,203 @@
+<title>Add Student</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <div class="container-fluid">
+        <h1 style="text-align: center;font-size: 50px;color:black;">TUTION MANAGEMENT SYSTEM</h1><br>
+        <ul class="nav nav-pills nav-justified">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/adminaddfaculty">Add Faculty</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/adminaddstudent">Add Student</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/adminaddcourse">Add Course</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/adminviewstudent">View Student</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/adminviewevent">View Event</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/addemployee">Add Employee</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/adminscheduleclass">Schedule Class</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " routerLink="/adminlogin">Logout</a>
+          </li>
+        </ul><br><br><br>
+        <h3 style="color:maroon;">Admin Logged in...</h3>
+        <div style="padding:3% 3%;margin: auto;background-color:lightgoldenrodyellow;">
+        <div class="container-fluid">
+          <h1 style="text-align: center;">STUDENT REGISTRATION</h1><br>
+          <div class="row">
+          <div class="col-sm-4">
+            <div style="margin:auto;border:2px solid white;border-radius:5px;padding: 10px;">
+              <h3 style="text-align: center;">Student Registration(All information required*)</h3>
+                <form action="#" post="method">
+                  <div class="form-group">
+                    <label for="sid">Student Id:</label><br>
+                    <input type="number" class="form-control" [(ngModel)]="student.sid" placeholder="Enter Student Id while updating Only" id="sid" name="sid">
+                  </div><br>
+                  <div class="form-group">
+                    <label for="name">Student Name:</label><br>
+                    <input type="text" class="form-control" [(ngModel)]="student.name" placeholder="Enter Student Name" id="name" name="name" required>
+                  </div><br>  
+                    <div class="form-group">
+                        <label for="address">Address:</label><br>
+                        <input type="text" class="form-control" [(ngModel)]="student.address" placeholder="Enter Address" id="address" name="address" required>
+                      </div><br>
+                      <div class="form-group">
+                        <label for="email">Email:</label><br>
+                        <input type="text" class="form-control" [(ngModel)]="student.email" placeholder="Enter Email" id="email" name="email" required>
+                      </div><br>
+                      <div class="form-group">
+                        <label for="course">Course Opted:</label><br>
+                        <input type="text" class="form-control" [(ngModel)]="student.course" placeholder="Enter Unique Course Opted" id="course" name="course" required>
+                      </div><br>
+                      <div class="form-group">
+                        <label for="phone">Phonenumber:</label><br>
+                        <input type="tel" class="form-control" [(ngModel)]="student.phone" placeholder="Enter Phonenumber" id="phone" name="phone" pattern="[0-9]{10}" required>
+                      </div><br>
+                      <div class="form-group">
+                        <label for="totalfees">Total Fees Of Course:</label><br>
+                        <input type="text" class="form-control" [(ngModel)]="student.totalfees" placeholder="Enter Total Fees Of Course" id="totalfees" name="totalfees" required>
+                      </div><br>
+                      <div class="form-group">
+                        <label for="paidfees">Fees Paid:</label><br>
+                        <input type="text" class="form-control" [(ngModel)]="student.paidfees" placeholder="Enter Fees Paid" id="paidfees" name="paidfees" required>
+                      </div><br>
+                      <div class="form-group">
+                        <label for="balancefees">Balance Fees To Be Paid:</label><br>
+                        <input type="text" class="form-control" [(ngModel)]="student.balancefees" placeholder="Enter Balance Fees To Be Paid" id="balancefees" name="balancefees" required>
+                      </div><br>
+                      <div class="form-group">
+                        <label for="fines">Fines:</label><br>
+                        <input type="text" class="form-control" [(ngModel)]="student.fines" placeholder="Enter Fines" id="fines" name="fines" required>
+                      </div><br>
+                      <div class="form-group">
+                        <label for="reservationcategorycharges">Reservation Category Charges:</label><br>
+                        <input type="text" class="form-control" [(ngModel)]="student.reservationcategorycharges" placeholder="Enter Reservation Category Charges" id="reservationcategorycharges" name="reservationcategorycharges" required>
+                      </div><br>
+                      <div class="form-group">
+                        <label for="feespaymentdate">Fees Payment Date:</label><br>
+                        <input type="date" class="form-control" [(ngModel)]="student.feespaymentdate" placeholder="Enter Fees Payment Date" id="feespaymentdate" name="feespaymentdate" required>
+                      </div><br>
+                      <div class="form-group">
+                        <label for="studusername">Student Username:</label><br>
+                        <input type="text" class="form-control" [(ngModel)]="student.studusername" placeholder="Enter Unique Username" id="studusername" name="studusername" required>
+                      </div><br>
+                      <div class="form-group">
+                        <label for="studpassword">Student New/Current Password:</label><br>
+                        <input type="text" class="form-control" [(ngModel)]="student.studpassword" placeholder="Enter New/Current Password" id="studpassword" name="studpassword" required>
+                      </div><br>
+                    <input type="submit" class="btn btn-primary" style="width:45%;font-size:30px;background-color:blue;color:white;" value="Register" (click)="studentNow()">
+                    <input type="submit" class="btn btn-success" style="width:45%;font-size:30px;background-color:coral;color:white;" value="Update" (click)="updateStudentNow()"><br>
+                
+                </form>
+                </div>
+              </div><br><br><br><br><br>
+              <div class="col-sm-8">
+                <h3 style="text-align: center;">Search Student By Sid</h3>
+                <br>
+                <div class="form-group">
+                    <label for="search">Search By Sid:</label><br>
+                    <input type="number" class="form-control" [(ngModel)]="search.a" placeholder="Search By Sid" id="search" name="search"><br>
+                    <button class="btn btn-info btn-xs" (click)="searchById(search.a)"><span class="glyphicon glyphicon-remove"></span> Search</button><br>
+                  </div><br>
+                  <table class="table table-dark table-responsive">
+                    <tr>
+                        <th>Sid</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Email</th>
+                        <th>Course</th>
+                        <th>Phone</th>
+                        <th>Total Fees</th>
+                        <th>Fees Paid</th>
+                        <th>Balance Fees</th>
+                        <th>Fines</th>
+                        <th>Reservation Charges</th>
+                        <th>Fees Payment Date</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                        <th>Delete</th>
+                    </tr>
+                    <tr >
+                        <td>{{student.sid}}</td>
+                        <td>{{student.name}}</td>
+                        <td>{{student.address}}</td>
+                        <td>{{student.email}}</td>
+                        <td>{{student.course}}</td>
+                        <td>{{student.phone}}</td>
+                        <td>{{student.totalfees}}</td>
+                        <td>{{student.paidfees}}</td>
+                        <td>{{student.balancefees}}</td>
+                        <td>{{student.fines}}</td>
+                        <td>{{student.reservationcategorycharges}}</td>
+                        <td>{{student.feespaymentdate}}</td>
+                        <td>{{student.studusername}}</td>
+                        <td>{{student.studpassword}}</td>
+                        <td class="text-center"><button class="btn btn-danger btn-xs" (click)="delStudent(student.sid)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
+                    </tr>
+                </table>
+                <br>
+
+                <h3 style="text-align: center;">List of Students</h3>
+                <br>
+                <table class="table table-dark table-responsive">
+                  <thead>
+                  <tr>
+                    <th>Sid</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Email</th>
+                    <th>Course</th>
+                    <th>Phone</th>
+                    <th>Total Fees</th>
+                    <th>Fees Paid</th>
+                    <th>Balance Fees</th>
+                    <th>Fines</th>
+                    <th>Reservation Charges</th>
+                    <th>Fees Payment Date</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>Delete</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let student of students">
+                    <td>{{student.sid}}</td>
+                    <td>{{student.name}}</td>
+                    <td>{{student.address}}</td>
+                    <td>{{student.email}}</td>
+                    <td>{{student.course}}</td>
+                    <td>{{student.phone}}</td>
+                    <td>{{student.totalfees}}</td>
+                    <td>{{student.paidfees}}</td>
+                    <td>{{student.balancefees}}</td>
+                    <td>{{student.fines}}</td>
+                    <td>{{student.reservationcategorycharges}}</td>
+                    <td>{{student.feespaymentdate}}</td>
+                    <td>{{student.studusername}}</td>
+                    <td>{{student.studpassword}}</td>
+                    <td class="text-center"><button class="btn btn-danger btn-xs" (click)="delStudent(student.sid)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
+                  </tr>
+                  </tbody>
+              </table><br><br>
+ 
+              </div>
+        </div>
+        </div>
+    </div>

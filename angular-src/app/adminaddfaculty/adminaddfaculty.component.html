@@ -1,0 +1,195 @@
+<title>Add Faculty</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <div class="container-fluid">
+        <h1 style="text-align: center;font-size: 50px;color:black;">TUTION MANAGEMENT SYSTEM</h1><br>
+        <ul class="nav nav-pills nav-justified">
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/adminaddfaculty">Add Faculty</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/adminaddstudent">Add Student</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/adminaddcourse">Add Course</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/adminviewstudent">View Student</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/adminviewevent">View Event</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/addemployee">Add Employee</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/adminscheduleclass">Schedule Class</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " routerLink="/adminlogin">Logout</a>
+          </li>
+        </ul><br><br><br>
+        <h3 style="color:maroon;">Admin Logged in...</h3>
+        <div style="padding:3% 3%;margin: auto;background-color:lightgoldenrodyellow;">
+        <div class="container-fluid">
+          <h1 style="text-align: center;">FACULTY REGISTRATION</h1><br>
+          <div class="row">
+          <div class="col-sm-4">
+            <div style="margin:auto;border:2px solid white;border-radius:5px;padding: 10px;">
+              <h3 style="text-align: center;">Faculty Registration(All information required*)</h3>
+                <form action="#" post="method">
+                  <div class="form-group">
+                    <label for="fid">Faculty Id:</label><br>
+                    <input type="number" class="form-control" [(ngModel)]="faculty.fid" placeholder="Enter Faculty Id while updating Only" id="fid" name="fid">
+                  </div><br>
+                  <div class="form-group">
+                    <label for="name">Faculty Name:</label><br>
+                    <input type="text" class="form-control" [(ngModel)]="faculty.name" placeholder="Enter Faculty Name" id="name" name="name" required>
+                  </div><br>  
+                    <div class="form-group">
+                        <label for="address">Address:</label><br>
+                        <input type="text" class="form-control" [(ngModel)]="faculty.address" placeholder="Enter Address" id="address" name="address" required>
+                      </div><br>
+                      <div class="form-group">
+                        <label for="email">Email:</label><br>
+                        <input type="text" class="form-control" [(ngModel)]="faculty.email" placeholder="Enter Email" id="email" name="email" required>
+                      </div><br>
+                      <div class="form-group">
+                        <label for="course">Course Taken:</label><br>
+                        <input type="text" class="form-control" [(ngModel)]="faculty.course" placeholder="Enter Unique Course Taken" id="course" name="course" required>
+                      </div><br>
+                      <div class="form-group">
+                        <label for="phone">Phonenumber:</label><br>
+                        <input type="tel" class="form-control" [(ngModel)]="faculty.phone" placeholder="Enter Phonenumber" id="phone" name="phone" pattern="[0-9]{10}" required>
+                      </div><br>
+                      <div class="form-group">
+                        <label for="salary">Monthly Salary:</label><br>
+                        <input type="text" class="form-control" [(ngModel)]="faculty.salary" placeholder="Enter Monthly Salary" id="salary" name="salary" required>
+                      </div><br>
+                      <div class="form-group">
+                        <label for="status">Payment Status:</label><br>
+                        <input type="text" class="form-control" [(ngModel)]="faculty.paymentstatus" placeholder="Enter Month - Payment Status" id="status" name="status" required>
+                      </div><br>
+                      <div class="form-group">
+                        <label for="lecturedetails">Lecture Details:</label><br>
+                        <input type="text" class="form-control" [(ngModel)]="faculty.lecturedetails" placeholder="Enter Lecture Details" id="lecturedetails" name="lecturedetails" required>
+                      </div><br>
+                      <div class="form-group">
+                        <label for="username">Faculty Username:</label><br>
+                        <input type="text" class="form-control" [(ngModel)]="faculty.facultyusername" placeholder="Enter Unique Username" id="username" name="username" required>
+                      </div><br>
+                      <div class="form-group">
+                        <label for="facultypassword">Faculty New/Current Password:</label><br>
+                        <input type="text" class="form-control" [(ngModel)]="faculty.facultypassword" placeholder="Enter New/Current Password" id="facultypassword" name="facultypassword" required>
+                      </div><br>
+                      <div class="form-group">
+                        <label for="contractstartdate">Contract Start Date:</label><br>
+                        <input type="date" class="form-control" [(ngModel)]="faculty.contractstartdate" placeholder="Enter Contract Start Date" id="contractstartdate" name="contractstartdate" required>
+                      </div><br>                      
+                      <div class="form-group">
+                        <label for="contractrenewaldate">Contract Renewal Date:</label><br>
+                        <input type="date" class="form-control" [(ngModel)]="faculty.contractrenewaldate" placeholder="Enter Contract Renewal Date" id="contractrenewaldate" name="contractrenewaldate" required>
+                      </div><br>
+                    <input type="submit" class="btn btn-primary" style="width:45%;font-size:30px;background-color:blue;color:white;" value="Register" (click)="facultyNow()">
+                    <input type="submit" class="btn btn-success" style="width:45%;font-size:30px;background-color:coral;color:white;" value="Update" (click)="updateFacultyNow()"><br>
+                
+                </form>
+                </div>
+              </div><br><br><br><br><br>
+              <div class="col-sm-8">
+                <h3 style="text-align: center;">Search Faculty By Fid</h3>
+                <br>
+                <div class="form-group">
+                    <label for="search">Search By Fid:</label><br>
+                    <input type="number" class="form-control" [(ngModel)]="search.a" placeholder="Search By Fid" id="search" name="search"><br>
+                    <button class="btn btn-info btn-xs" (click)="searchById(search.a)"><span class="glyphicon glyphicon-remove"></span> Search</button><br>
+                  </div><br>
+                  <table class="table table-dark table-responsive">
+                    <tr>
+                        <th>Fid</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Email</th>
+                        <th>Course</th>
+                        <th>Phone</th>
+                        <th>Salary</th>
+                        <th>Payment Status</th>
+                        <th>Lecture Details</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                        <th>Contract Start Date</th>
+                        <th>Contract Renewal Date</th>
+                        <th>Delete</th>
+                    </tr>
+                    <tr >
+                        <td>{{faculty.fid}}</td>
+                        <td>{{faculty.name}}</td>
+                        <td>{{faculty.address}}</td>
+                        <td>{{faculty.email}}</td>
+                        <td>{{faculty.course}}</td>
+                        <td>{{faculty.phone}}</td>
+                        <td>{{faculty.salary}}</td>
+                        <td>{{faculty.paymentstatus}}</td>
+                        <td>{{faculty.lecturedetails}}</td>
+                        <td>{{faculty.facultyusername}}</td>
+                        <td>{{faculty.facultypassword}}</td>
+                        <td>{{faculty.contractstartdate}}</td>
+                        <td>{{faculty.contractrenewaldate}}</td>
+                        <td class="text-center"><button class="btn btn-danger btn-xs" (click)="delFaculty(faculty.fid)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
+                    </tr>
+                </table>
+                <br>
+
+                <h3 style="text-align: center;">List of Faculty</h3>
+                <br>
+                <table class="table table-dark table-responsive">
+                  <thead>
+                  <tr>
+                    <th>Fid</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Email</th>
+                    <th>Course</th>
+                    <th>Phone</th>
+                    <th>Salary</th>
+                    <th>Payment Status</th>
+                    <th>Lecture Details</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>Contract Start Date</th>
+                    <th>Contract Renewal Date</th>
+                    <th>Delete</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let faculty of facultys">
+                    <td>{{faculty.fid}}</td>
+                    <td>{{faculty.name}}</td>
+                    <td>{{faculty.address}}</td>
+                    <td>{{faculty.email}}</td>
+                    <td>{{faculty.course}}</td>
+                    <td>{{faculty.phone}}</td>
+                    <td>{{faculty.salary}}</td>
+                    <td>{{faculty.paymentstatus}}</td>
+                    <td>{{faculty.lecturedetails}}</td>
+                    <td>{{faculty.facultyusername}}</td>
+                    <td>{{faculty.facultypassword}}</td>
+                    <td>{{faculty.contractstartdate}}</td>
+                    <td>{{faculty.contractrenewaldate}}</td>
+                    <td class="text-center"><button class="btn btn-danger btn-xs" (click)="delFaculty(faculty.fid)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
+                  </tr>
+                  </tbody>
+              </table><br><br>
+ 
+              </div>
+        </div>
+        </div>
+    </div>
